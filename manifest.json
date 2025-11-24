@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "DogPlaces – Dog-Friendly Restaurants",
+  "version": "0.0.1",
+  "description": "Shows if a restaurant on Google Maps is dog-friendly.",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/maps/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": []
+}
