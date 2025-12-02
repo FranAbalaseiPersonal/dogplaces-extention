@@ -10,7 +10,14 @@
     {
       "matches": ["https://www.google.com/maps/*"],
       "js": ["content.js"],
+      "css": ["dogplaces.css"],
       "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/dog-places-logo.png"],
+      "matches": ["<all_urls>"]
     }
   ],
   "permissions": []
