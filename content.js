@@ -363,7 +363,14 @@ function getDogFriendlyCollapsedHtml() {
       </div>
       <span class="font-bold text-foreground text-sm">Dog Friendly</span>
     </div>
-    <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--collapsed" alt="DogPlaces logo">
+    <div class="flex items-center gap-2">
+      <button id="dogplaces-expand-btn" class="dogplaces-expand-btn" aria-label="Expand details">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </button>
+      <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--collapsed" alt="DogPlaces logo">
+    </div>
   </div>
 </div>`;
 }
@@ -384,7 +391,14 @@ function getTerraceCollapsedHtml() {
       </div>
       <span class="font-bold text-foreground text-sm">Terrace Only</span>
     </div>
-    <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--collapsed" alt="DogPlaces logo">
+    <div class="flex items-center gap-2">
+      <button id="dogplaces-expand-btn" class="dogplaces-expand-btn" aria-label="Expand details">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </button>
+      <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--collapsed" alt="DogPlaces logo">
+    </div>
   </div>
 </div>`;
 }
@@ -408,7 +422,14 @@ function getNoDogsCollapsedHtml() {
       </div>
       <span class="font-bold text-foreground text-sm">No Dogs Allowed</span>
     </div>
-    <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--collapsed" alt="DogPlaces logo">
+    <div class="flex items-center gap-2">
+      <button id="dogplaces-expand-btn" class="dogplaces-expand-btn" aria-label="Expand details">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </button>
+      <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--collapsed" alt="DogPlaces logo">
+    </div>
   </div>
 </div>`;
 }
@@ -516,7 +537,14 @@ function getDogFriendlyExpandedHtml(place) {
       <div class="flex items-center gap-2">
         <span class="font-bold text-foreground">Dog Friendly</span>
       </div>
-      <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--expanded" alt="DogPlaces logo">
+      <div class="flex items-center gap-2">
+        <button id="dogplaces-collapse-btn" class="dogplaces-expand-btn" aria-label="Collapse">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6"/>
+          </svg>
+        </button>
+        <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--expanded" alt="DogPlaces logo">
+      </div>
     </div>
 
     ${buildExpandedMetaHtml(place)}
@@ -534,7 +562,14 @@ function getTerraceExpandedHtml(place) {
       <div class="flex items-center gap-2">
         <span class="font-bold text-foreground">Terrace Only</span>
       </div>
-      <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--expanded" alt="DogPlaces logo">
+      <div class="flex items-center gap-2">
+        <button id="dogplaces-collapse-btn" class="dogplaces-expand-btn" aria-label="Collapse">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6"/>
+          </svg>
+        </button>
+        <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--expanded" alt="DogPlaces logo">
+      </div>
     </div>
 
     ${buildExpandedMetaHtml(place)}
@@ -552,7 +587,14 @@ function getNoDogsExpandedHtml(place) {
       <div class="flex items-center gap-2">
         <span class="font-bold text-foreground">No Dogs Allowed</span>
       </div>
-      <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--expanded" alt="DogPlaces logo">
+      <div class="flex items-center gap-2">
+        <button id="dogplaces-collapse-btn" class="dogplaces-expand-btn" aria-label="Collapse">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6"/>
+          </svg>
+        </button>
+        <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--expanded" alt="DogPlaces logo">
+      </div>
     </div>
 
     ${buildExpandedMetaHtml(place)}
@@ -566,11 +608,18 @@ function getUnknownExpandedHtml() {
   return `
 <div class="dogplaces-expanded-card rounded-lg text-card-foreground shadow-sm w-[260px] p-4 border-2 border-primary/30 bg-card">
   <div class="space-y-3">
-    <div class="flex items-center justify-between">
+    <div class="dogplaces-expanded-header flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="font-bold text-foreground">Not Known</span>
       </div>
-      <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--expanded" alt="DogPlaces logo">
+      <div class="flex items-center gap-2">
+        <button id="dogplaces-collapse-btn" class="dogplaces-expand-btn" aria-label="Collapse">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6"/>
+          </svg>
+        </button>
+        <img src="${DOGPLACES_LOGO_URL}" class="dogplaces-logo dogplaces-logo--expanded" alt="DogPlaces logo">
+      </div>
     </div>
 
     <p class="text-sm text-muted-foreground">Help fellow dog owners by sharing what you know about this place.</p>
@@ -638,7 +687,19 @@ function ensureRoot() {
 
   // 🔑 CRITICAL: if Maps removed it, re-attach it
   if (!document.body.contains(root)) {
-    document.body.appendChild(root);
+    // Wait for body to be available
+    if (document.body) {
+      document.body.appendChild(root);
+    } else {
+      // If body isn't ready, wait for it
+      const observer = new MutationObserver((mutations, obs) => {
+        if (document.body) {
+          document.body.appendChild(root);
+          obs.disconnect();
+        }
+      });
+      observer.observe(document.documentElement, { childList: true });
+    }
   }
 
   return root;
@@ -667,6 +728,36 @@ function setExpanded(root, isExpanded) {
 
   collapsed.style.display = willExpand ? "none" : "block";
   expanded.style.display = willExpand ? "block" : "none";
+
+  // When expanding, ensure the expanded widget stays visible above the bottom of the screen
+  if (willExpand && !currentlyExpanded) {
+    // Use requestAnimationFrame to ensure the DOM has updated and we can measure
+    requestAnimationFrame(() => {
+      const rootRect = root.getBoundingClientRect();
+      const expandedRect = expanded.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const padding = 16; // Minimum distance from bottom of viewport
+      
+      // Calculate where the bottom of the expanded widget would be
+      const expandedBottom = expandedRect.bottom;
+      const maxAllowedBottom = viewportHeight - padding;
+      
+      if (expandedBottom > maxAllowedBottom) {
+        // Widget would be below viewport, move it up
+        const excess = expandedBottom - maxAllowedBottom;
+        const currentTop = rootRect.top;
+        const newTop = currentTop - excess;
+        
+        // Ensure it doesn't go above the top of the viewport
+        const minTop = padding;
+        const finalTop = Math.max(minTop, newTop);
+        
+        // Update position
+        root.style.top = `${finalTop}px`;
+        root.style.bottom = "auto";
+      }
+    });
+  }
 }
 
 function bindUnknownFormHandlers(root, mapsEntityId) {
@@ -755,23 +846,33 @@ function renderDogPlacesWidget(place, mapsEntityId) {
   const expanded = root.querySelector(".dogplaces-expanded");
   const expandedCard = root.querySelector(".dogplaces-expanded-card");
 
-  // Expand/collapse behaviour:
-  if (collapsed) {
-    collapsed.addEventListener("click", (e) => {
+  // Expand button handler (for collapsed cards)
+  const expandBtn = root.querySelector("#dogplaces-expand-btn");
+  if (expandBtn) {
+    expandBtn.addEventListener("click", (e) => {
+      e.preventDefault();
       e.stopPropagation();
       setExpanded(root, true);
     });
   }
 
-  // Important: DO NOT collapse the whole expanded area on any click.
-  // Only collapse when clicking outside the card (the container background).
-  if (expanded) {
-    expanded.addEventListener("click", () => setExpanded(root, false));
+  // Collapse button handler (for expanded cards)
+  const collapseBtn = root.querySelector("#dogplaces-collapse-btn");
+  if (collapseBtn) {
+    collapseBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setExpanded(root, false);
+    });
   }
-
-  // Stop clicks inside the card (and form) from collapsing
-  if (expandedCard) {
-    expandedCard.addEventListener("click", (e) => e.stopPropagation());
+  
+  // Prevent any clicks inside the form from doing anything unwanted
+  const form = root.querySelector(".dogplaces-add-form");
+  if (form) {
+    form.addEventListener("click", (e) => {
+      // Allow form interactions, just stop propagation to prevent unwanted behavior
+      e.stopPropagation();
+    });
   }
 
   // "+ Add" button explicitly expands
@@ -797,12 +898,19 @@ function renderDogPlacesWidget(place, mapsEntityId) {
 // 7. URL watching (fixed)
 // ======================
 let lastRenderedMapsEntityId = null;
+let urlCheckInterval = null;
+let mutationObserver = null;
 
-async function renderForCurrentPlace() {
+async function renderForCurrentPlace(retryCount = 0) {
   const mapsEntityId = getCurrentMapsEntityId();
 
-  // If no place detected, you can choose to hide the widget or show Unknown
-  if (!mapsEntityId) return;
+  // If no place detected, retry a few times (Maps might be loading)
+  if (!mapsEntityId) {
+    if (retryCount < 5) {
+      setTimeout(() => renderForCurrentPlace(retryCount + 1), 500);
+    }
+    return;
+  }
 
   // Only re-render when the place changes
   if (mapsEntityId === lastRenderedMapsEntityId) return;
@@ -815,11 +923,67 @@ async function renderForCurrentPlace() {
 function startWatchingUrl() {
   console.log("DogPlaces – watching current place changes");
 
-  setInterval(() => {
+  // Clear any existing interval
+  if (urlCheckInterval) {
+    clearInterval(urlCheckInterval);
+  }
+
+  // Poll for URL changes and ensure root stays attached
+  urlCheckInterval = setInterval(() => {
+    // Ensure root is still in DOM (Maps might remove it)
+    const root = document.getElementById("dogplaces-root");
+    if (root && !document.body.contains(root) && document.body) {
+      document.body.appendChild(root);
+    }
+    
     renderForCurrentPlace().catch((e) =>
       console.error("DogPlaces – render error:", e)
     );
   }, 600);
+
+  // Intercept pushState and replaceState to detect URL changes immediately
+  const originalPushState = history.pushState;
+  const originalReplaceState = history.replaceState;
+
+  history.pushState = function(...args) {
+    originalPushState.apply(history, args);
+    setTimeout(() => renderForCurrentPlace().catch(console.error), 100);
+  };
+
+  history.replaceState = function(...args) {
+    originalReplaceState.apply(history, args);
+    setTimeout(() => renderForCurrentPlace().catch(console.error), 100);
+  };
+
+  // Listen for popstate events (back/forward navigation)
+  window.addEventListener('popstate', () => {
+    setTimeout(() => renderForCurrentPlace().catch(console.error), 100);
+  });
+
+  // Use MutationObserver to watch for DOM changes that might indicate a new place
+  if (mutationObserver) {
+    mutationObserver.disconnect();
+  }
+
+  let mutationDebounceTimer = null;
+  mutationObserver = new MutationObserver(() => {
+    // Debounce rapid mutations
+    if (mutationDebounceTimer) {
+      clearTimeout(mutationDebounceTimer);
+    }
+    mutationDebounceTimer = setTimeout(() => {
+      renderForCurrentPlace().catch(console.error);
+    }, 300);
+  });
+
+  // Observe the document body for changes
+  if (document.body) {
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: false
+    });
+  }
 }
 
 // ======================
@@ -846,6 +1010,11 @@ function makeDraggable(el) {
   let offsetX = 0;
   let offsetY = 0;
   let pointerId = null;
+  let startX = 0;
+  let startY = 0;
+  let hasMoved = false;
+  let justDragged = false;
+  const DRAG_THRESHOLD = 5; // pixels
 
   // Helper: keep within viewport
   function clampToViewport(left, top) {
@@ -863,7 +1032,7 @@ function makeDraggable(el) {
   el.addEventListener("pointerdown", (e) => {
     const target = e.target;
 
-    // Don’t start dragging when interacting with form controls or links
+    // Don't start dragging when interacting with form controls, links, or expand/collapse buttons
     const isInteractive =
       target &&
       (target.tagName === "INPUT" ||
@@ -871,13 +1040,23 @@ function makeDraggable(el) {
         target.tagName === "LABEL" ||
         target.tagName === "TEXTAREA" ||
         target.tagName === "SELECT" ||
-        target.closest("a"));
+        target.closest("a") ||
+        target.closest("#dogplaces-expand-btn") ||
+        target.closest("#dogplaces-collapse-btn") ||
+        target.closest("#dogplaces-add-details-btn"));
 
     if (isInteractive) return;
 
-    // Start dragging
-    dragging = true;
+    // Store initial position to detect if this is a drag or click
+    startX = e.clientX;
+    startY = e.clientY;
+    hasMoved = false;
+    dragging = false;
+    justDragged = false;
     pointerId = e.pointerId;
+    
+    // Clear the wasDragging flag at the start
+    el.dataset.wasDragging = "false";
 
     // IMPORTANT: convert current position to left/top to avoid snapping
     const rect = el.getBoundingClientRect();
@@ -890,52 +1069,97 @@ function makeDraggable(el) {
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
 
-    el.classList.add("dragging");
-
     // Capture pointer so we keep receiving move events even if cursor leaves element
     try {
       el.setPointerCapture(pointerId);
     } catch (_) {}
 
-    e.preventDefault();
-    e.stopPropagation();
+    // Don't prevent default yet - wait to see if it's a drag
   });
 
   el.addEventListener("pointermove", (e) => {
-    if (!dragging) return;
-    if (pointerId !== null && e.pointerId !== pointerId) return;
+    if (pointerId === null || e.pointerId !== pointerId) return;
 
-    const newLeft = e.clientX - offsetX;
-    const newTop = e.clientY - offsetY;
+    // Check if pointer has moved enough to be considered a drag
+    const deltaX = Math.abs(e.clientX - startX);
+    const deltaY = Math.abs(e.clientY - startY);
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
-    const clamped = clampToViewport(newLeft, newTop);
+    if (!hasMoved && distance > DRAG_THRESHOLD) {
+      // This is a drag, not a click
+      hasMoved = true;
+      dragging = true;
+      justDragged = true;
+      el.dataset.wasDragging = "true";
+      el.classList.add("dragging");
+      e.preventDefault();
+      e.stopPropagation();
+    }
 
-    el.style.left = `${clamped.left}px`;
-    el.style.top = `${clamped.top}px`;
-    el.style.right = "auto";
-    el.style.bottom = "auto";
+    if (dragging) {
+      const newLeft = e.clientX - offsetX;
+      const newTop = e.clientY - offsetY;
+
+      const clamped = clampToViewport(newLeft, newTop);
+
+      el.style.left = `${clamped.left}px`;
+      el.style.top = `${clamped.top}px`;
+      el.style.right = "auto";
+      el.style.bottom = "auto";
+      
+      e.preventDefault();
+    }
   });
 
   function endDrag() {
-    if (!dragging) return;
+    const wasDragging = dragging;
     dragging = false;
+    hasMoved = false;
     el.classList.remove("dragging");
 
-    // Persist last position
-    try {
-      const left = parseFloat(el.style.left);
-      const top = parseFloat(el.style.top);
-      if (Number.isFinite(left) && Number.isFinite(top)) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({ left, top }));
-      }
-    } catch (_) {}
+    // Only persist position if we actually dragged
+    if (wasDragging) {
+      try {
+        const left = parseFloat(el.style.left);
+        const top = parseFloat(el.style.top);
+        if (Number.isFinite(left) && Number.isFinite(top)) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({ left, top }));
+        }
+      } catch (_) {}
+      
+      // Keep the flag for a bit to prevent click events, then clear it
+      setTimeout(() => {
+        justDragged = false;
+        el.dataset.wasDragging = "false";
+      }, 200);
+    } else {
+      justDragged = false;
+      el.dataset.wasDragging = "false";
+    }
 
     pointerId = null;
   }
 
   el.addEventListener("pointerup", (e) => {
     if (pointerId !== null && e.pointerId !== pointerId) return;
+    
+    const didDrag = dragging || hasMoved;
+    
+    // If we dragged, prevent the click event from firing
+    if (didDrag) {
+      e.preventDefault();
+      // Ensure the flag is set before click event can fire
+      el.dataset.wasDragging = "true";
+    }
+    
     endDrag();
+    
+    // If we dragged, clear the flag after click event would have fired
+    if (didDrag) {
+      setTimeout(() => {
+        el.dataset.wasDragging = "false";
+      }, 100);
+    }
   });
 
   el.addEventListener("pointercancel", endDrag);
@@ -947,6 +1171,16 @@ function makeDraggable(el) {
     el.style.left = `${clamped.left}px`;
     el.style.top = `${clamped.top}px`;
   });
+
+  // Prevent click events if we just dragged (use capture phase to catch it early)
+  el.addEventListener("click", (e) => {
+    if (el.dataset.wasDragging === "true" || el.classList.contains("dragging")) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      return false;
+    }
+  }, true);
 }
 
 
@@ -955,9 +1189,30 @@ function makeDraggable(el) {
 // ======================
 console.log("DogPlaces boot ✅");
 
+// Initialize immediately and also on load
+function initializeExtension() {
+  // Ensure root exists
+  ensureRoot();
+  
+  // Try to render immediately
+  renderForCurrentPlace().catch(console.error);
+  
+  // Start watching for changes
+  startWatchingUrl();
+}
+
+// Run immediately (for SPA navigation)
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeExtension);
+} else {
+  // DOM already loaded
+  initializeExtension();
+}
+
+// Also run on load event (for full page reloads)
 window.addEventListener("load", () => {
   setTimeout(() => {
-    renderForCurrentPlace();
-    startWatchingUrl();
-  }, 1200);
+    renderForCurrentPlace().catch(console.error);
+  }, 500);
 });
+
