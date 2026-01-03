@@ -294,6 +294,39 @@
   color: #6b7280; /* subtle gray */
 }
 
+/* Expand/Collapse button */
+.dogplaces-expand-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--card-foreground);
+  opacity: 0.7;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  border-radius: 4px;
+}
 
+.dogplaces-expand-btn:hover {
+  opacity: 1;
+  background: rgba(185, 99, 47, 0.1);
+}
 
+.dogplaces-expand-btn:active {
+  transform: scale(0.95);
+}
 
+.dogplaces-expand-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.dogplaces-expand-btn svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
